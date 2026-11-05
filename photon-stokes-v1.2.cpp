@@ -4,7 +4,7 @@
 // until either its absorption or detection. All necessary routines
 // and parameters are defined here, including the procedures for
 // electron scattering
-// grain. Some features are marked with a symbol (*) denoting that
+// Some features are marked with a symbol (*) denoting that
 // they are not used by the program at its current state but that they
 // are reserved for future purposes or diagnostic reasons.
 //
@@ -641,11 +641,6 @@ void Photon::FindNextBorder(scatterer Cloud,double& tpre,double pos[],
   switch(Cloud.shape)
   {
 
-    // check for a toroidal scattering region
-    case 0:
-      TorusCoinc(pos,direct,t,Cloud.a,Cloud.b,Cloud.R,Cloud.c);
-      break;
-
     // check for a cylindrical scattering region, consisting of four
     // connected surfaces
     case 1:
@@ -663,17 +658,14 @@ void Photon::FindNextBorder(scatterer Cloud,double& tpre,double pos[],
       SphereSegCoinc(pos,direct,Cloud.pos,t,Cloud.b,Cloud.theta,true);
       break;
 
-    // check for a spherical scattering region
-    case 3:
-      SphereSegCoinc(pos,direct,Cloud.pos,t,Cloud.a,pi/2,true);	
-      break;
-
     // check for a flared disc scattering region, consisting of three
     // connected surfaces
-    default:
+    case 4:
       ConeCoinc(pos,direct,Cloud.a,Cloud.b,pi/2-Cloud.theta,t);
       SphereSegCoinc(pos,direct,Cloud.pos,t,Cloud.a,Cloud.theta,false);
       SphereSegCoinc(pos,direct,Cloud.pos,t,Cloud.b,Cloud.theta,false);	
+      break;
+    default:
       break;
   }
 
@@ -975,7 +967,7 @@ bool Photon::Proceed(Model M)
 // return false otherwise;
 bool Photon::InsideCloud(scatterer Cloud,double gap)
 {
-  double a,b,c,con[3],r,tn,eps,scale,rho2,z2,limit;
+  double a,b,c,r,tn,eps,scale,rho2,z2,limit;
   bool inside;
 
   scale = Cloud.a;
@@ -999,17 +991,6 @@ bool Photon::InsideCloud(scatterer Cloud,double gap)
   inside = false;
   switch(Cloud.shape)
   {
-
-    // check for a toroidal scattering region
-    case 0:
-      a = Cloud.a+eps;
-      b = Cloud.b+eps;
-      if ((pos[2]-Cloud.c)*(pos[2]-Cloud.c)/(a*a)+pow(Cloud.R-sqrt(pos[0]*pos[0]+pos[1]*pos[1]),2)/
-         (b*b)<=1)
-      {
-        inside = true;
-      }
-      break;
 
     // check for a cylindrical scattering region
     case 1:
@@ -1037,18 +1018,8 @@ bool Photon::InsideCloud(scatterer Cloud,double gap)
       }
       break;
 
-    // check for a spherical scattering region
-    case 3:
-      VecDiff(con,pos,Cloud.pos);
-      a = Cloud.a+eps;
-      if (SProd(con,con) <= a*a)
-      {
-        inside = true;
-      }
-      break;
-
     // check for a flared disc scattering region
-    default:
+    case 4:
       r = SProd(pos,pos);
       tn = tan(Cloud.theta);
       rho2 = pos[0]*pos[0]+pos[1]*pos[1];
@@ -1063,6 +1034,8 @@ bool Photon::InsideCloud(scatterer Cloud,double gap)
       {
         inside = true;
       }
+      break;
+    default:
       break;
 
   }
@@ -1466,20 +1439,6 @@ void Photon::LambdaShift(bool ToFrame,int vtype,double vr,double vphi,double vth
   double betak,beta2;
   double PhiP, ThetaP;
   double v[3],p[3],vroh,vz;
-
-  // by decommenting and adjusting these lines, radial dependecies of 
-  // the velocity can be assigned
-  // const double r0 = 1.;
-  // const double vr0 = 1.;
-  // const double vphi0 = 1.;
-  // const double vtheta0 = 1.;
-  // const double alpha_r = -2;
-  // const double alpha_p = -2;
-  // const double alpha_t = -2;
-  // vtype = 0;
-  // vr = vr0 * pow(GetDistance()/r0,alpha_r);
-  // vphi = vphi0 * pow(GetDistance()/r0,alpha_p);
-  // vtheta = vtheta0 * pow(GetDistance()/r0,alpha_t);
 
   // transform the velocity from local to global Cartesian coordinates
   SMult(p,1/GetDistance(),pos);

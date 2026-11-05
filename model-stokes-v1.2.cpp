@@ -271,13 +271,6 @@ bool Model::Initialize()
       {
 	switch(Cloud[i].shape)
 	{
-	  case 0:
-	    a = Cloud[i].a;
-	    b = Cloud[i].b;
-	    R = Cloud[i].R;
-	    d = 2*(sqrt((R+b)*(R+b)+a*a))+Gap;
-	    if (d > MaxExp) MaxExp = d;
-	    break;
           case 1:
 	    a = Cloud[i].a;
 	    b = Cloud[i].b;
@@ -288,11 +281,11 @@ bool Model::Initialize()
           case 2:  d = 2*Cloud[i].b+Gap;
     	    if (d > MaxExp) MaxExp = d;
   	    break;
- 	  case 3:  d = 2*(sqrt(SProd(Cloud[i].pos,Cloud[i].pos))+Cloud[i].a)+Gap;
-            if (d > MaxExp) MaxExp = d;
-   	    break;
-          default: d = 2*Cloud[i].b+Gap;
+          case 4: d = 2*Cloud[i].b+Gap;
     	    if (d > MaxExp) MaxExp = d;
+            break;
+          default:
+            break;
         }
         if (Cloud[i].vr>VMax)
         {

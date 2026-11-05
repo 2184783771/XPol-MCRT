@@ -55,7 +55,7 @@ const double LinePrecision = 0.01;
 const double TCS = 3.08633e18*6.6524e-25;
 
 
-// type of a scatterer (torus, cylinder, conical, sphere) - shape,
+// type of a scatterer (cylinder, cone, flared disk) - shape,
 // pos, a, b, and theta describe the geometry of the region. Density is
 // the electron number density and vr denotes a radial velocity.
 struct scatterer

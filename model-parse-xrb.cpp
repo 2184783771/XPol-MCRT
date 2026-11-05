@@ -18,8 +18,7 @@ bool Model::ParseCoronaOption(std::istream& in_stream,char str[200],
     {
       Corona.type = 0;
     }
-    else if (strcmp(str,"toroidal")==0 || strcmp(str,"torus")==0 ||
-             strcmp(str,"sphere")==0)
+    else if (strcmp(str,"toroidal")==0 || strcmp(str,"torus")==0)
     {
       Corona.type = 1;
     }

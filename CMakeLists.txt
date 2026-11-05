@@ -4,7 +4,7 @@ project(XPolMCRT LANGUAGES CXX)
 add_executable(xpol_mcrt
   corona-lamppost-stokes-v1.2.cpp
   corona-slab-stokes-v1.2.cpp
-  corona-sphere-stokes-v1.2.cpp
+  corona-toroidal-stokes-v1.2.cpp
   corona-stokes-v1.2.cpp
   detector-stokes-v1.2.cpp
   disk-reflection-stokes-v1.2.cpp

@@ -100,7 +100,7 @@ bool Model::ParseGeneralOption(std::istream& in_stream,char str[200])
 bool Model::ParseLegacyOption(std::istream& in_stream,char str[200])
 {
   bool accept = false;
-  int i,j;
+  int i;
   if (strcmp(str,"ContSource")==0)
   {
     in_stream >> str;
@@ -171,31 +171,6 @@ bool Model::ParseLegacyOption(std::istream& in_stream,char str[200])
 	  NLR.vtheta = atof(str);
     accept = true;
   }
-  if (strcmp(str,"Torus")==0)
-  {
-    i = EndScattList;
-    Cloud[i].shape = 0;
-    in_stream >> str;
-    Cloud[i].R = atof(str);
-    in_stream >> str;
-    Cloud[i].a = atof(str);
-    in_stream >> str;
-    Cloud[i].b = atof(str);
-    in_stream >> str;
-    Cloud[i].c = atof(str);
-    in_stream >> str;
-    Cloud[i].Density = atof(str);
-	  in_stream >> str;
-	  Cloud[i].vtype = atoi(str);
-    in_stream >> str;
-    Cloud[i].vr = atof(str);
-    in_stream >> str;
-    Cloud[i].vphi = atof(str);
-    in_stream >> str;
-    Cloud[i].vtheta = atof(str);
-    EndScattList++;
-    accept = true;
-  }
   if (strcmp(str,"Cylinder")==0)
   {
     i = EndScattList;
@@ -231,30 +206,6 @@ bool Model::ParseLegacyOption(std::istream& in_stream,char str[200])
     Cloud[i].b = atof(str);
     in_stream >> str;
     Cloud[i].theta = pi/180*atof(str);
-    in_stream >> str;
-    Cloud[i].Density = atof(str);
-	  in_stream >> str;
-	  Cloud[i].vtype = atoi(str);
-    in_stream >> str;
-    Cloud[i].vr = atof(str);
-    in_stream >> str;
-    Cloud[i].vphi = atof(str);
-    in_stream >> str;
-    Cloud[i].vtheta = atof(str);
-    EndScattList++;
-    accept = true;
-  }
-  if (strcmp(str,"Sphere")==0)
-  {
-    i = EndScattList;
-    Cloud[i].shape = 3;
-    for (j=0; j<=2; j++)
-    {
-      in_stream >> str;
-      Cloud[i].pos[j] = atof(str);
-    }
-    in_stream >> str;
-    Cloud[i].a = atof(str);
     in_stream >> str;
     Cloud[i].Density = atof(str);
 	  in_stream >> str;

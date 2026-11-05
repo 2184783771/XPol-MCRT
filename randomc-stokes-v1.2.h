@@ -47,21 +47,7 @@ Define random number generator classes
 ***********************************************************************/
 
 class CRandomMersenne {                // Encapsulate random number generator
-// Choose which version of Mersenne Twister you want:
-#if 0 
-// Define constants for type MT11213A:
-#define MERS_N   351
-#define MERS_M   175
-#define MERS_R   19
-#define MERS_U   11
-#define MERS_S   7
-#define MERS_T   15
-#define MERS_L   17
-#define MERS_A   0xE4BD75F5
-#define MERS_B   0x655E5280
-#define MERS_C   0xFFD58000
-#else    
-// or constants for type MT19937:
+// MT19937 parameters.
 #define MERS_N   624
 #define MERS_M   397
 #define MERS_R   31
@@ -72,7 +58,6 @@ class CRandomMersenne {                // Encapsulate random number generator
 #define MERS_A   0x9908B0DF
 #define MERS_B   0x9D2C5680
 #define MERS_C   0xEFC60000
-#endif
 
 public:
    CRandomMersenne(int seed) {         // Constructor

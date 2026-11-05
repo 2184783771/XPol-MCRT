@@ -4,7 +4,7 @@
 // until either its absorption or detection. All necessary routines
 // and parameters are defined here, including the procedures for
 // electron scattering
-// grain. Some features are marked with a symbol (*) denoting that
+// Some features are marked with a symbol (*) denoting that
 // they are not used by the program at its current state but that they
 // are reserved for future purposes or diagnostic reasons.
 //
