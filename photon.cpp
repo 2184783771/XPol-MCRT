@@ -16,11 +16,11 @@
 #include <math.h>
 #include <stdio.h>    
 #include <time.h>    
-#include "photon-stokes-v1.2.h"                  
-#include "corona-stokes-v1.2.h"
-#include "disk-reflection-stokes-v1.2.h"
-#include "disk-reflection-polarization-stokes-v1.2.h"
-#include "randomc-stokes-v1.2.h"   
+#include "photon.h"                  
+#include "corona.h"
+#include "disk-reflection.h"
+#include "disk-reflection-polarization.h"
+#include "randomc.h"   
 
 #if (defined (__BORLANDC__) || defined (_MSC_VER)) && ! defined(_WINDOWS_)
   #include <conio.h>                   // define getch() function

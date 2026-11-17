@@ -15,8 +15,8 @@
 #include <math.h>
 #include <stdlib.h>
 #include <stdio.h>
-#include "model-stokes-v1.2.h"
-#include "corona-stokes-v1.2.h"
+#include "model.h"
+#include "corona.h"
 
 using namespace std;
 

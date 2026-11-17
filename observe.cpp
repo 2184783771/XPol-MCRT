@@ -18,8 +18,8 @@
 #else
   #include <sys/stat.h>
 #endif
-#include "observe-stokes-v1.2.h"
-#include "detector-stokes-v1.2.h"
+#include "observe.h"
+#include "detector.h"
 
 using namespace std;
 

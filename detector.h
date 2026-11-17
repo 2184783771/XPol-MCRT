@@ -11,8 +11,8 @@
 
 
 #include <fstream>
-#include "model-stokes-v1.2.h"
-#include "photon-stokes-v1.2.h"
+#include "model.h"
+#include "photon.h"
 
 using namespace std;
 

@@ -9,10 +9,10 @@
 #include <fstream>
 #include <string.h>
 #include <math.h>
-#include "detector-stokes-v1.2.h"
-#include "photon-stokes-v1.2.h"
-#include "model-stokes-v1.2.h"
-#include "observe-stokes-v1.2.h"
+#include "detector.h"
+#include "photon.h"
+#include "model.h"
+#include "observe.h"
 
 using namespace std;
 

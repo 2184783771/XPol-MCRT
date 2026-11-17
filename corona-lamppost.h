@@ -3,7 +3,7 @@
 #ifndef corona_lamppost_h
 #define corona_lamppost_h
 
-#include "model-stokes-v1.2.h"
+#include "model.h"
 
 void CoronaApplyLampPostDefaults(CoronaRegion& Corona,XRBSeedDisk& SeedDisk,
                                  bool readCoronaSource,bool readSeedSource,

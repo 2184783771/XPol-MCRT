@@ -18,11 +18,9 @@ is usually `build/Release/XPol-MCRT.exe`. The supplied configuration runs
 10,000,000 photons, so lower `PhotonNum` for a quick startup test. Results are
 written under `outputs/<OutputFile>/` for an unqualified output name.
 
-For Visual Studio 2022, open `vs2022/XPolMCRT.sln`. This solution is generated
-from `CMakeLists.txt` and includes the required debugger working directory and
-stack setting. `vs2022/` is a local build directory and
-should not be committed; after cloning, open the source folder as a CMake
-project or regenerate the solution.
+For Visual Studio 2022, open this source folder as a CMake project.
+Visual Studio regenerates its project from `CMakeLists.txt` and uses the
+configured debugger working directory and stack setting.
 
 Supported corona types are `slab`, `toroidal`, and `lamp-post`. The legacy
 standalone `Sphere` and `Torus` scattering-region options and the misleading
@@ -31,11 +29,11 @@ uses spherical geometry, and the toroidal corona still uses torus intersections.
 
 ## Source layout
 
-- `main-stokes-v1.2.cpp`: minimal entry point.
+- `main.cpp`: minimal entry point.
 - `run-simulation.cpp` and `run-state.h`: photon transport and run counters.
 - `run-report.cpp`: console diagnostics and metadata CSV output.
-- `model-stokes-v1.2.cpp`: model defaults, validation, and accessors.
+- `model.cpp`: model defaults, validation, and accessors.
 - `model-parse-basic.cpp` and `model-parse-xrb.cpp`: grouped `config.ini` options.
-- `corona-lamppost-stokes-v1.2.cpp` and `corona-toroidal-stokes-v1.2.cpp`:
+- `corona-lamppost.cpp` and `corona-toroidal.cpp`:
   model-specific source and boundary geometry.
-- `photon-stokes-v1.2.cpp` and `observe-stokes-v1.2.cpp`: photon physics and detectors.
+- `photon.cpp` and `observe.cpp`: photon physics and detectors.

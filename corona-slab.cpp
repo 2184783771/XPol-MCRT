@@ -1,7 +1,7 @@
 #include <math.h>
-#include "corona-slab-stokes-v1.2.h"
-#include "corona-stokes-v1.2.h"
-#include "specmath-stokes-v1.2.h"
+#include "corona-slab.h"
+#include "corona.h"
+#include "specmath.h"
 
 
 void CoronaApplySlabDefaults(CoronaRegion& Corona,XRBSeedDisk& SeedDisk,

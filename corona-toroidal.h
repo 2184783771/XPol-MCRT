@@ -2,7 +2,7 @@
 #ifndef CORONA_TOROIDAL_H
 #define CORONA_TOROIDAL_H
 
-#include "model-stokes-v1.2.h"
+#include "model.h"
 
 void CoronaApplyToroidalDefaults(CoronaRegion& Corona,XRBSeedDisk& SeedDisk,
                                  bool readCoronaSource,bool readSeedSource,

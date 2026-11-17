@@ -12,7 +12,7 @@
 #define model_h
 
 #include <iosfwd>
-#include "specmath-stokes-v1.2.h"
+#include "specmath.h"
 
 
 // maximum number of spectroscopic channels of the detectors

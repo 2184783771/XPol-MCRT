@@ -2,9 +2,9 @@
 #define XPOL_RUN_STATE_H
 
 #include <ctime>
-#include "model-stokes-v1.2.h"
-#include "photon-stokes-v1.2.h"
-#include "observe-stokes-v1.2.h"
+#include "model.h"
+#include "photon.h"
+#include "observe.h"
 
 class RunState
 {

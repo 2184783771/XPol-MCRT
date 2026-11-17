@@ -10,7 +10,7 @@
 #ifndef observe_h
 #define observe_h
 
-#include "detector-stokes-v1.2.h"
+#include "detector.h"
 
 
 // type definition of the detector system

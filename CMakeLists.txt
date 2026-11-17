@@ -2,21 +2,21 @@ cmake_minimum_required(VERSION 3.16)
 project(XPolMCRT LANGUAGES CXX)
 
 add_executable(xpol_mcrt
-  corona-lamppost-stokes-v1.2.cpp
-  corona-slab-stokes-v1.2.cpp
-  corona-toroidal-stokes-v1.2.cpp
-  corona-stokes-v1.2.cpp
-  detector-stokes-v1.2.cpp
-  disk-reflection-stokes-v1.2.cpp
-  main-stokes-v1.2.cpp
+  corona-lamppost.cpp
+  corona-slab.cpp
+  corona-toroidal.cpp
+  corona.cpp
+  detector.cpp
+  disk-reflection.cpp
+  main.cpp
   run-simulation.cpp
   run-report.cpp
-  model-stokes-v1.2.cpp
+  model.cpp
   model-parse-basic.cpp
   model-parse-xrb.cpp
-  observe-stokes-v1.2.cpp
-  photon-stokes-v1.2.cpp
-  specmath-stokes-v1.2.cpp
+  observe.cpp
+  photon.cpp
+  specmath.cpp
 )
 
 set_property(DIRECTORY PROPERTY VS_STARTUP_PROJECT xpol_mcrt)

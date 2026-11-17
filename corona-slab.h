@@ -3,7 +3,7 @@
 #ifndef corona_slab_h
 #define corona_slab_h
 
-#include "model-stokes-v1.2.h"
+#include "model.h"
 
 void CoronaApplySlabDefaults(CoronaRegion& Corona,XRBSeedDisk& SeedDisk,
                              bool readCoronaSource,bool readSeedSource,

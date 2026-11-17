@@ -6,10 +6,10 @@
 #ifndef corona_h
 #define corona_h
 
-#include "model-stokes-v1.2.h"
-#include "corona-slab-stokes-v1.2.h"
-#include "corona-toroidal-stokes-v1.2.h"
-#include "corona-lamppost-stokes-v1.2.h"
+#include "model.h"
+#include "corona-slab.h"
+#include "corona-toroidal.h"
+#include "corona-lamppost.h"
 
 void CoronaApplySourceDefaults(CoronaRegion& Corona,XRBSeedDisk& SeedDisk,
                                bool readCoronaSource,bool readSeedSource,

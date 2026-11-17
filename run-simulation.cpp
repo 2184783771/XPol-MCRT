@@ -16,9 +16,9 @@
 #include <sys/resource.h>
 #endif
 #include "run-state.h"
-#include "photon-stokes-v1.2.h"
-#include "observe-stokes-v1.2.h"
-#include "randomc-stokes-v1.2.h"                   
+#include "photon.h"
+#include "observe.h"
+#include "randomc.h"                   
 
 using namespace std;
 

@@ -15,7 +15,7 @@
 #define photon_h
 
 
-#include "model-stokes-v1.2.h"
+#include "model.h"
 
 
 // type definition for a photon

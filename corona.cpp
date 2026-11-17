@@ -1,5 +1,5 @@
 #include <math.h>
-#include "corona-stokes-v1.2.h"
+#include "corona.h"
 
 
 void CoronaApplySourceDefaults(CoronaRegion& Corona,XRBSeedDisk& SeedDisk,

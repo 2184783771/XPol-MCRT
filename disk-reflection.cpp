@@ -1,8 +1,8 @@
 #include <math.h>
-#include "disk-reflection-stokes-v1.2.h"
-#include "disk-reflection-polarization-stokes-v1.2.h"
-#include "randomc-stokes-v1.2.h"
-#include "specmath-stokes-v1.2.h"
+#include "disk-reflection.h"
+#include "disk-reflection-polarization.h"
+#include "randomc.h"
+#include "specmath.h"
 
 extern CRandomMersenne RanGen;
 

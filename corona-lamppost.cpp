@@ -1,6 +1,6 @@
-#include "corona-lamppost-stokes-v1.2.h"
-#include "corona-stokes-v1.2.h"
-#include "specmath-stokes-v1.2.h"
+#include "corona-lamppost.h"
+#include "corona.h"
+#include "specmath.h"
 #include <math.h>
 
 static void CoronaSampleSphere(CoronaRegion Corona,double r1,double r2,

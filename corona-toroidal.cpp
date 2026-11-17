@@ -1,7 +1,7 @@
 #include <math.h>
-#include "corona-toroidal-stokes-v1.2.h"
-#include "corona-stokes-v1.2.h"
-#include "specmath-stokes-v1.2.h"
+#include "corona-toroidal.h"
+#include "corona.h"
+#include "specmath.h"
 
 static double CoronaToroidalTubeRadius(CoronaRegion Corona)
 {

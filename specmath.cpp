@@ -13,7 +13,7 @@
 
 
 #include <math.h>
-#include "specmath-stokes-v1.2.h"
+#include "specmath.h"
 
 using namespace std;
 

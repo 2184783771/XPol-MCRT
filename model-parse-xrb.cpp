@@ -1,4 +1,4 @@
-#include "model-stokes-v1.2.h"
+#include "model.h"
 #include <istream>
 #include <cstdlib>
 #include <cstring>
